@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>careers</title>
+    <link href="Technovert.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <header class="page-header">
+        <h1 class="page-title">Technovert</h1>
+        <nav class="page-navigation">
+            <ul class="page-nav-items">
+                <li><a href="Technovert.html">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li class="selected-tab"><a href="Careers.html">Careers</a></li>
+                <li><a href="contactUs.html">Contact</a></li>       
+             </ul>
+                 <img src="blog-icon.png" alt="Blog">
+        </nav>
+    </header>
+
+    <div class="main-blog">
+        <p class="form-heading-1">Careers at Technovert</p>
+        <p class="career-paragraph-1">We are looking for smart people who love fiddling with code and pour their heart into it. If you are one, we would like to talk to you. Please fill
+the form below and we will get back to you.</p>
+        <form class="career-form">
+            <div class="form-element">
+                <div class="col-25 column-style">
+                    <label>Name</label>
+                </div>
+                <div class="col-50 column-style">
+                    <input type="text" id="fullname">
+                </div>
+                <div class="col-25 column-style">
+                    <span id="required-fullname">*</span>
+                </div>
+            </div>
+            <div class="form-element">
+                <div class="col-25 column-style">
+                    <label>Email</label>
+                </div>
+                <div class="col-50 column-style">
+                    <input type="text" id="emailaddress">
+                </div>
+                <div class="col-25 column-style">
+                    <span id="required-email">*</span>
+                </div>
+            </div>
+            <div class="form-element">
+                <div class="col-25 column-style">
+                    <label>Desired Role</label>
+                </div>
+                <div class="col-50 column-style">
+                    <input type="text">
+                </div>
+                <div class="col-25"></div>
+            </div>
+            <div class="form-element">
+                <div class="col-25 browse-input column-style">
+                    <label>Upload Resume</label>
+                </div>
+                <div class="col-50 browse-input column-style">
+                    <input type="text" id="selected-file">
+                </div>
+                <div class="col-25-browse browse-input column-style">
+                    <button class="browse">Browse..</button>
+                    <input id="getfiles" type="file">
+                </div>
+            </div>
+            <div class="form-element">
+                <div class="col-25"></div>
+                <div class="col-50">
+                    <button id="submit" name="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    
+</body>
+</html>
