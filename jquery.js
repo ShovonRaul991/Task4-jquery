@@ -1,4 +1,10 @@
 $(document).ready(function(){
+    let fullname = $('#fullname');
+    let emailaddress = $('#emailaddress');
+    let org = $('#org');
+    let email_status = $('#required-email');
+    
+
     $(".reset-button").click(function(){
         $("#contactUs").trigger('reset');
     });
@@ -19,38 +25,33 @@ $(document).ready(function(){
     });
 
     $("#submit-button").on('click',function(event){
-        let x = $('#fullname').val();
-        let y = $('#emailaddress').val();
-        let z = $('#org').val();
-        let em = $('#required-email').text();
-        if(x === '' || y==='' || z==='' || em === "Email is incorrect.")
+        
+        if(fullname.val() === '' || emailaddress.val()==='' || org.val()==='' || email_status.text() === "Email is incorrect.")
         {
             $('#error-message').html("Please fill all the required fields below");
             event.preventDefault();
         }
-        if(x==='')
+        if(fullname.val()==='')
         {
             $('#required-fullname').text("Name is required.");
         }
-        if(y==='')
+        if(emailaddress.val()==='')
         {
             $('#required-email').text("Email is required.");
         }
-        if(z==='')
+        if(org.val()==='')
         {
             $('#required-org').text("*");
         }
-        if(em ==="Email is correct." && x!=="" && y!=="" && z!=="")
+        if(email_status.text() ==="Email is correct." && fullname.val()!=="" && emailaddress.val()!=="" && org.val()!=="")
         {
             alert("Form is Submitted");
         }
     });
 
     $("#submit").on('click',function(event){
-        let x = $('#fullname').val();
-        let y = $('#emailaddress').val();
-        let em = $('#required-email').text();
-        if(x === '' || y==='' || em === "Email is incorrect."){
+        
+        if(fullname.val() === '' || emailaddress.val()==='' || email_status.text() === "Email is incorrect."){
             alert("Please fill all the required fields below");
             event.preventDefault();
         }
@@ -60,14 +61,18 @@ $(document).ready(function(){
     });
 
     $('#emailaddress').on('change',function(){
-        let mail = $("#emailaddress").val();
         let valid_email = /^[a-zA-Z0-9. ]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if(mail.match(valid_email))
+        if(emailaddress.val().match(valid_email))
         {
             $('#required-email').text("Email is correct.");
         }
+        
+        else if(emailaddress.val()===''){
+            $('#required-email').text("Email is required.");
+        }
+        
         else{
-            $('#required-email').text("Email is incorrect.");
+            $('#required-email').text("Email is incorrect.")
         }
     });
 
