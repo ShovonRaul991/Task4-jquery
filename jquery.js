@@ -1,8 +1,8 @@
 $(document).ready(function(){
-    let fullname = $('#fullname');
-    let emailaddress = $('#emailaddress');
+    let fullName = $('#fullname');
+    let emailAddress = $('#emailaddress');
     let org = $('#org');
-    let email_status = $('#required-email');
+    let emailStatus = $('#required-email');
     
 
     $(".reset-button").click(function(){
@@ -26,24 +26,24 @@ $(document).ready(function(){
 
     $("#submit-button").on('click',function(event){
         
-        if(fullname.val() === '' || emailaddress.val()==='' || org.val()==='' || email_status.text() === "Email is incorrect.")
+        if(fullName.val() === '' || emailAddress.val()==='' || org.val()==='' || emailStatus.text() === "Email is incorrect.")
         {
             $('#error-message').html("Please fill all the required fields below");
             event.preventDefault();
         }
-        if(fullname.val()==='')
+        if(fullName.val()==='')
         {
             $('#required-fullname').text("Name is required.");
         }
-        if(emailaddress.val()==='')
+        if(emailAddress.val()==='')
         {
             $('#required-email').text("Email is required.");
         }
         if(org.val()==='')
         {
-            $('#required-org').text("*");
+            $('#required-org').text("Organization needed");
         }
-        if(email_status.text() ==="Email is correct." && fullname.val()!=="" && emailaddress.val()!=="" && org.val()!=="")
+        if(emailStatus.text() ==="Email is correct." && fullName.val()!=="" && emailAddress.val()!=="" && org.val()!=="")
         {
             alert("Form is Submitted");
         }
@@ -51,7 +51,7 @@ $(document).ready(function(){
 
     $("#submit").on('click',function(event){
         
-        if(fullname.val() === '' || emailaddress.val()==='' || email_status.text() === "Email is incorrect."){
+        if(fullName.val() === '' || emailAddress.val()==='' || emailStatus.text() === "Email is incorrect."){
             alert("Please fill all the required fields below");
             event.preventDefault();
         }
@@ -60,19 +60,38 @@ $(document).ready(function(){
         }
     });
 
-    $('#emailaddress').on('change',function(){
-        let valid_email = /^[a-zA-Z0-9. ]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if(emailaddress.val().match(valid_email))
+    $('#emailaddress').on('input',function(){
+        let validemail = /^[a-zA-Z0-9. ]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if(emailAddress.val().match(validemail))
         {
             $('#required-email').text("Email is correct.");
         }
         
-        else if(emailaddress.val()===''){
+        else if(emailAddress.val()===''){
             $('#required-email').text("Email is required.");
         }
         
         else{
             $('#required-email').text("Email is incorrect.")
+        }
+    });
+
+    $('#fullname').on('input', function(){
+        if(fullName.val()==="")
+        {
+            $('#required-fullname').text("Name is required.");
+        }
+        else{
+            $('#required-fullname').text("*");
+        }
+    });
+
+    $('#org').on('input',function(){
+        if(org.val()===""){
+            $('#required-org').text("organization needed");
+        }
+        else{
+            $('#required-org').text("*");
         }
     });
 
