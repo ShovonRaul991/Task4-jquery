@@ -92,7 +92,8 @@ $.fn.nameValidation = function(){
 }
 
 $.fn.emailValidation = function(){
-    let validemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    //let validemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let validemail = /^[0-9a-z.\s+_]+@[0-9a-z-.+]+\.[a-z]{2,4}$/;
     if(emailAddress.val().match(validemail))
     {
         $('#required-email').text("*");
