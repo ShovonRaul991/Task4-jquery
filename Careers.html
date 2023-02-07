@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>careers</title>
     <link href="Technovert.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    
+    <!-- <script type="text/javascript" src="Technovert.js"></script> -->
 </head>
 <body>
     <header class="page-header">
@@ -24,8 +23,8 @@
     </header>
 
     <div class="main-blog">
-        <p class="form-heading-1">Careers at Technovert</p>
-        <p class="career-paragraph-1">We are looking for smart people who love fiddling with code and pour their heart into it. If you are one, we would like to talk to you. Please fill
+        <p class="form-heading">Careers at Technovert</p>
+        <p class="career-paragraph">We are looking for smart people who love fiddling with code and pour their heart into it. If you are one, we would like to talk to you. Please fill
 the form below and we will get back to you.</p>
         <form class="career-form">
             <div class="form-element">
@@ -33,10 +32,10 @@ the form below and we will get back to you.</p>
                     <label>Name</label>
                 </div>
                 <div class="col-50 column-style">
-                    <input type="text" id="fullname">
+                    <input type="text" id="Fullname" oninput="validateName()">
                 </div>
                 <div class="col-25 column-style">
-                    <span id="required-fullname">*</span>
+                    <span id="RequiredFullname">*</span>
                 </div>
             </div>
             <div class="form-element">
@@ -44,10 +43,10 @@ the form below and we will get back to you.</p>
                     <label>Email</label>
                 </div>
                 <div class="col-50 column-style">
-                    <input type="text" id="emailaddress">
+                    <input type="text" id="EmailAddress" oninput="validateEmail()">
                 </div>
                 <div class="col-25 column-style">
-                    <span id="required-email">*</span>
+                    <span id="RequiredEmail">*</span>
                 </div>
             </div>
             <div class="form-element">
@@ -64,22 +63,22 @@ the form below and we will get back to you.</p>
                     <label>Upload Resume</label>
                 </div>
                 <div class="col-50 browse-input column-style">
-                    <input type="text" id="selected-file">
+                    <input type="text" id="SelectedFile">
                 </div>
                 <div class="col-25-browse browse-input column-style">
-                    <button class="browse">Browse..</button>
-                    <input id="getfiles" type="file">
+                    <button class="browse" onclick="fileGet();return false">Browse..</button>
+                    <input id="GetFiles" type="file">
                 </div>
             </div>
             <div class="form-element">
                 <div class="col-25"></div>
                 <div class="col-50">
-                    <button id="submit" name="submit">Submit</button>
+                    <input type="submit" id="Submit" value="Submit" onclick="careerFormValidation()"></input>
                 </div>
             </div>
         </form>
     </div>
-
-    <script src="jquery.js"></script>
+    <script type="text/javascript" src="Technovert.js"></script>
+    
 </body>
 </html>

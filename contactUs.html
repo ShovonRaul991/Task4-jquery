@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ContactUs</title>
     <link href="Technovert.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    
+    <!-- <script type="text/javascript" src="./Technovert.js"></script> -->
+    <script type="text/javascript" src="./Technovert.js" defer></script>
     
 </head>
 <body>
@@ -24,18 +24,18 @@
         </nav>
     </header>
     <div class="main-blog">
-        <p id="error-message"></p>
-        <form class="Contact-form" id="contactUs">
+        <p id="ErrorMessage"></p>
+        <form class="Contact-form" id="ContactUs">
             <div class="form-element">
                 <div class="col-40 column-style">
                     <label>My Name:</label>
                 </div>
                 <div class="col-50 column-style">
-                    <input type="text" id="fullname">
+                    <input type="text" id="FullName" oninput="validateName()">
                     
                 </div>
                 <div class="col-25 column-style">
-                    <span id="required-fullname">*</span>
+                    <span id="RequiredFullname">*</span>
                 </div>
             </div>
             <div class="form-element">
@@ -43,9 +43,9 @@
                     <label>Gender:</label>
                 </div>
                 <div>
-                    <input type="radio" id="male" name="gender" value="male">
+                    <input type="radio" id="Male" name="gender" value="male" onchange="genderSelection()">
                     <label for="Male">Male</label><br>
-                    <input type="radio" id="female" name="gender" value="female">
+                    <input type="radio" id="Female" name="gender" value="female" onchange="genderSelection()">
                     <label for="Female">Female</label><br>
                 </div>
             </div>
@@ -54,10 +54,10 @@
                     <label>My Email Address:</label>
                 </div>
                 <div class="col-50 column-style">
-                    <input type="text" id="emailaddress">
+                    <input type="text" id="EmailAddress" oninput="validateEmail()">
                 </div>
                 <div class="col-25 column-style">
-                    <span id="required-email">*</span>
+                    <span id="RequiredEmail">*</span>
                 </div>
             </div>
             <div class="form-element">
@@ -74,10 +74,10 @@
                     <label>My Organization name:</label>
                 </div>
                 <div class="col-50 column-style">
-                    <input type="text" id="org">
+                    <input type="text" id="Org" oninput="validateOrg()">
                 </div>
                 <div class="col-25 column-style">
-                    <span id="required-org">*</span>
+                    <span id="RequiredOrg">*</span>
                 </div>
             </div>
             <div class="form-element">
@@ -94,8 +94,8 @@
                     <label>My State or Province:</label>
                 </div>
                 <div class="col-50 column-style">
-                    <select name="select-box" id="states" class="states">
-                        <option value="" selected>Select State or Province</option>
+                    <select name="select-box" id="States" class="states" onchange="addPromo()">
+                        <option value="">Select State or Province</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -141,11 +141,11 @@
                     <label>Please Contact Me By:</label>
                 </div>
                 <div>
-                    <input type="radio" name="radio-2" id="email"><span></span>
+                    <input type="radio" name="radio-2" id="Email"><span></span>
                     <label>Email</label><br>
-                    <input type="radio" name="radio-2" id="phone">
+                    <input type="radio" name="radio-2" id="Phone">
                     <label>Phone</label><br>
-                    <input type="radio" name="radio-2" id="both">
+                    <input type="radio" name="radio-2" id="Both">
                     <label>Both</label>
                 </div>
                 <div class="col-25 column-style"></div>
@@ -155,7 +155,7 @@
                     <label>Promotion Code:</label>
                 </div>
                 <div class="col-50 column-style">
-                    <input type="text" id="promotional" class="promotional">
+                    <input type="text" id="Promotional" class="promotional">
                 </div>
                 <div class="col-25 column-style"></div>
             </div>
@@ -175,18 +175,18 @@
                 <div class="col-25 column-style"></div>
             </div>
             <p>Tell us more about your organisation:</p>
-            <textarea class="textarea" id="textarea" cols="45" rows="5"></textarea>
+            <textarea class="textarea" id="TextArea" cols="45" rows="5"></textarea>
             <p>What I'd really like to know is:</p>
-            <textarea class="textarea" id="textarea" cols="45" rows="5"></textarea>
+            <textarea class="textarea" id="TextArea" cols="45" rows="5"></textarea>
             <br>
-            <input type="submit" value="Send Message" id="submit-button" class="submit-button">
+            <input type="submit" value="Send Message" id="SubmitButton" class="submit-button" onclick="contactUsFormValidation()">
             <!--<button value="Send Message" name="submit-button" id="submit-button" class="submit-button" onclick="nofilledError()">Send Message</button>
              <button class="submit-button" onclick="nofilledError()">Send Message</button> -->
-            <button class="reset-button">Clear Form</button>
+            <button class="reset-button" onclick="clearForm()">Clear Form</button>
             
         </form>
     </div>
     
-    <script src="jquery.js"></script>
+
 </body>
 </html>
